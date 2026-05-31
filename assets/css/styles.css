@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Outfit:wght@100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Outfit;
+}
+
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:
+    "nav"
+    "section"
+    "main"
+    "footer"
+    ;
+    grid-template-rows: 100px 100px 1fr 100px;
+}
+
+nav{
+    grid-area: nav;
+    background-color: rgb(143, 4, 177);
+}
+
+section{
+    grid-area: section;
+    background-color: rgb(198, 197, 197);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    grid-area: main;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    grid-area: footer;
+    background-color: rgb(76, 5, 114);
+}
+
+.header{
+    padding-top: 30px;
+    color: beige;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding-inline: 30px;
+}
+
+.menu-options{
+    display: none;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo p{
+    font-size: 1.1rem;
+    letter-spacing: 10px;
+    padding-left: 10px;
+}
+
+
+h1{
+    font-family: Germania One;
+    letter-spacing: 1px;
+    line-height: 0.6;
+}
+
+.sectionbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 80%;
+}
+
+.buscador{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    height: 40px;
+    padding-inline: 10px;
+    border-radius: 5px;
+    border: solid 1px rgb(204, 204, 204);
+    font-size: 1rem;
+    color: rgb(84, 84, 84);
+}
+
+.buscador i{
+    padding-bottom: 5px;
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items:center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    gap: 50px;
+}
+
+.card{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    background-color: rgb(246, 246, 246);
+    border: solid 2px rgb(209, 209, 209);
+    border-radius: 10px;
+}
+
+.card:nth-child(-n+1){
+    display: flex;
+}
+
+.card-img{
+    width: 100%;
+    min-height: 20px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-info{
+    font-size: 1rem;
+    padding-inline: 10px;
+}
+
+.card-button{
+    width: 50%;
+    height: 50px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 3px;
+    color: antiquewhite;
+    background-color: rgb(143, 4, 177);
+    font-size: 1.3rem;
+}
+
+.card-button:hover{
+    background-color: rgb(70, 18, 119);
+}
+
+.page-scroll{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid rgb(215, 215, 215) 2px;
+    margin-block: 20px;
+}
+
+.page-button{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(160, 41, 197);
+    font-weight: 500;    
+}
+
+.r-border{
+    border-right: solid 2px rgb(215,215,215);
+}
+
+footer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+    color: antiquewhite;
+}
+
+.rrss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 576px){
+    body{
+        grid-template-areas:
+        "nav nav"
+        "section main"
+        "footer footer"
+        ;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 100px 1fr 100px; 
+    }
+
+    .menu-options{
+        display: flex;
+        gap: 40px;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+    }
+    
+    .fa-bars{
+        display: none !important;
+    }
+
+    section{
+        align-items: start;
+        padding-top: 30px;
+    }
+
+    .sectionbox{
+        gap: 30px;
+    }
+
+    .product-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card:nth-child(-n+2){
+    display: flex;
+    }
+
+}
+
+@media (min-width: 992px){
+
+    .header{
+        padding-inline: 100px;
+    }
+
+    .product-grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .card:nth-child(-n+8){
+    display: flex;
+    }
+}
